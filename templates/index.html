@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>TEXT UTILS</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark center">
+        <a class="navbar-brand" href="/">TEXT UTILS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Welcome to <strong>Text Utils</strong> You can do anything with your text here
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="container mt-3">
+        <form action="analyze" method="post">{% csrf_token %}
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter your Text here and let the TEXT UTILS do the
+                    magic</label>
+                <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1" name="extraspaceremover">
+                        <label class="custom-control-label" for="customSwitch1">Remove Extra Spaces</label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch2" name="fullcase">
+                        <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch3" name="newline">
+                        <label class="custom-control-label" for="customSwitch3">New line Remover</label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch4" name="smallcase">
+                        <label class="custom-control-label" for="customSwitch4">lowercase<span style="color: red; font-weight: 900;">*</span></label>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                
+                <div class="col">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch5" name="removepunc">
+                        <label class="custom-control-label" for="customSwitch5">Remove Punctuation</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch6" name="charcount">
+                        <label class="custom-control-label" for="customSwitch6">Count Characters<span style="color: red; font-weight: 900;">*</span></label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark mt-3">Analyze Text</button>
+        </form>
+        <div class="alert alert-warning mt-3" role="alert">
+            <span style="color: red; font-weight: 900;">*</span> Indicates High Priority
+          </div>
+    </div>
+
+    <div class="card text-light navbar-dark center fixed-bottom" style="background-color: black; width: 100%; text-align: center;">
+          <p class="card-text center">Copyright © 2020 <a class="navbar-brand" href="/">TEXT UTILS</a></p>
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
